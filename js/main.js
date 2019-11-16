@@ -41,9 +41,6 @@ async function drawUsers() {
     const posts = await postsApi.getPosts()
     const users = await usersApi.getUsers()
 
-    console.log('posts', posts)
-    console.log('users', users)
-
     posts.map(post => {
         const user = users.find(user => user.id === post.userId)
 
