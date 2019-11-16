@@ -45,6 +45,7 @@ async function drawUsers() {
         const user = users.find(user => user.id === post.userId)
 
         let divPost = document.createElement("div")
+        divPost.innerHTML += `<img src="${schmoesURL + user.id}" />`
         divPost.innerHTML += `<h3>${user.name}</h3>`
         divPost.innerHTML += `<p>${post.body}</p>`
 
