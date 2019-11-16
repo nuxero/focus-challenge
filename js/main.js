@@ -42,7 +42,6 @@ async function drawUsers() {
         const user = users.find(user => user.id === post.userId)
 
         const gender = await helpers.get(genderizeURL + helpers.removeSymbols(user.name.split(" ")[0]))
-        console.log(gender)
 
         let divPost = document.createElement("div")
         divPost.innerHTML += `<img src="${schmoesURL + gender.gender + "/" + user.id}" />`
