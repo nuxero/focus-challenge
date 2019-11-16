@@ -3,10 +3,10 @@ const usersURL = "https://jsonplaceholder.typicode.com/users"
 const schmoesURL = "//joeschmoe.io/api/v1/"
 const app = document.getElementById("app")
 
-const postsApi = {
-    getPosts: () => {
+const helpers = {
+    get: (url) => {
         return new Promise((resolve, reject) => {
-            fetch(postsURL)
+            fetch(url)
                 .then(function (response) {
                     return response.json();
                 })
@@ -20,21 +20,12 @@ const postsApi = {
     }
 }
 
+const postsApi = {
+    getPosts: () => helpers.get(postsURL)
+}
+
 const usersApi = {
-    getUsers: () => {
-        return new Promise((resolve, reject) => {
-            fetch(usersURL)
-                .then(function (response) {
-                    return response.json();
-                })
-                .then(function (myJson) {
-                    resolve(myJson)
-                })
-                .catch(err => {
-                    reject(err)
-                })
-        })
-    }
+    getUsers: () => helpers.get(usersURL)
 }
 
 async function drawUsers() {
