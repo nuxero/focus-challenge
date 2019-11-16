@@ -7,15 +7,15 @@ const postsApi = {
     getPosts: () => {
         return new Promise((resolve, reject) => {
             fetch(postsURL)
-            .then(function (response) {
-                return response.json();
-            })
-            .then(function (myJson) {
-                resolve(myJson)
-            })
-            .catch(err => {
-                reject(err)
-            })
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (myJson) {
+                    resolve(myJson)
+                })
+                .catch(err => {
+                    reject(err)
+                })
         })
     }
 }
@@ -24,15 +24,15 @@ const usersApi = {
     getUsers: () => {
         return new Promise((resolve, reject) => {
             fetch(usersURL)
-            .then(function (response) {
-                return response.json();
-            })
-            .then(function (myJson) {
-                resolve(myJson)
-            })
-            .catch(err => {
-                reject(err)
-            })
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (myJson) {
+                    resolve(myJson)
+                })
+                .catch(err => {
+                    reject(err)
+                })
         })
     }
 }
