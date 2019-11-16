@@ -38,8 +38,10 @@ const usersApi = {
 }
 
 async function drawUsers() {
-    const posts = await postsApi.getPosts()
-    const users = await usersApi.getUsers()
+    const postsPromise = postsApi.getPosts()
+    const usersPromise = usersApi.getUsers()
+
+    let [posts, users] = await Promise.all([postsPromise, usersPromise])
 
     posts.map(post => {
         const user = users.find(user => user.id === post.userId)
